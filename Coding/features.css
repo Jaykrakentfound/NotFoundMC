@@ -1,0 +1,269 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraftia-Regular.ttf') format('truetype'); /* Adjust the path as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Minecraft', 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background color */
+    color: #f5f5f5;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Animations */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fixed Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('wp8368519.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    z-index: -1;
+    filter: blur(5px); /* Optional: Blur effect for the background */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0; /* Ensure it stays at the top */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav img {
+    height: 30px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #800000;
+}
+
+.cta .btn {
+    padding: 10px 20px;
+    background-color: #800000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background-color: #690000;
+}
+
+/* Features Section */
+.features {
+    padding: 100px 50px;
+    margin-top: 80px; /* Adjust based on header height */
+    text-align: center;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features h2 {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #f5f5f5;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.feature:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.feature-icon {
+    flex: 0 0 100px;
+    margin-right: 20px;
+}
+
+.feature-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h3 {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 1.8em;
+    color: #800000;
+    margin-bottom: 10px;
+}
+
+.feature-text p {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 1em;
+    color: #b3b3b3;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(13, 13, 13, 0.95);
+    text-align: center;
+    padding: 20px 0;
+    color: #777;
+    position: relative;
+    z-index: 1;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Social Media Icons in Footer */
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social-media img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    vertical-align: middle;
+}
+
+/* Scroll-up Bar */
+.scroll-up-bar {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #f5f5f5;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1000;
+}
+
+.scroll-up-bar.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Minecraft-Themed Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #303030; /* Dark background for the track */
+    border: 2px solid #121212; /* Adds a border for a blocky look */
+    border-radius: 0; /* No border radius to keep it blocky */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #800000; /* Minecraft-style red color for the thumb */
+    border: 2px solid #303030; /* Border to give it a blocky effect */
+    border-radius: 0; /* No border radius to keep it blocky */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #690000; /* Darker red on hover for an interactive feel */
+}
+
+/* Scrollbar Corner (for both horizontal and vertical scrollbar junctions) */
+::-webkit-scrollbar-corner {
+    background: #121212; /* Same color as the body background */
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #800000 #303030;
+}
+
+/* Internet Explorer and Edge scrollbar styling */
+* {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.social-media img {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
